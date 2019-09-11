@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Train Scheduler</title>
+    <!-- Moment.js -->
+    <script src="https://rawgit.com/moment/moment/2.2.1/min/moment.min.js"></script>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- CSS Style -->
+    <link rel="stylesheet" href="assets/css/reset.css"> <!-- YOUR CSS LINK FILE-->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col w-100">
+                <h2 class="text-center" style="font-family: 'Quicksand', sans-serif; font-size: 45px;">Train Scheduler</h2>
+            </div>
+        </div>
+    <form class="text-center border border-light p-5" >
+        <input type="text" id="train-name" class="form-control mb-4" placeholder="Train Name (ex. Choo Choo Express)">
+        <input type="text" id="destination" class="form-control mb-4" placeholder="Destination (ex. The Moon)">
+        <input type="number" id="initial-departure" class="form-control mb-4" placeholder="First Train Departure (military time)">
+        <input type="number" id="frequency" class="form-control mb-4" placeholder="Frequency (in minutes)">
+        <button class="btn btn-info btn-block" id="submit-button" type="submit">Submit</button>
+    </form>
+    <div class="row">
+        <div class="col w-100">
+                <div class="col-mb-4">
+                        <div class="card card-default">
+                            <div class="card-header text-center">
+                            <strong>Recent Employee Information</strong>
+                            </div>
+                            <div class="card-body" id="recent-employee">
+                            <table class="table table-sm table-hover" id="employee-table">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center" scope="col">Train Name</th>
+                                        <th class="text-center" scope="col">Destination</th>
+                                        <th class="text-center" scope="col">Frequency(min)</th>
+                                        <th class="text-center" scope="col">Next Arrival</th>
+                                        <th class="text-center" scope="col">Minutes Away</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- add here  -->
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                        </div>
+        </div>
+    </div>
+    </div>
+</body>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-database.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+<!-- Javascript, jQuery, Popper for some reason -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- link to your JS file -->
+<script src="assets/javascript/logic.js"></script> <!-- ADD JS LINK-->
+</html>

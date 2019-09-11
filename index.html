@@ -12,6 +12,8 @@
     <!-- CSS Style -->
     <link rel="stylesheet" href="assets/css/reset.css"> <!-- YOUR CSS LINK FILE-->
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Google Fonts Link -->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Quicksand&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -21,18 +23,18 @@
             </div>
         </div>
     <form class="text-center border border-light p-5" >
-        <input type="text" id="train-name" class="form-control mb-4" placeholder="Train Name (ex. Choo Choo Express)">
-        <input type="text" id="destination" class="form-control mb-4" placeholder="Destination (ex. The Moon)">
-        <input type="number" id="initial-departure" class="form-control mb-4" placeholder="First Train Departure (military time)">
-        <input type="number" id="frequency" class="form-control mb-4" placeholder="Frequency (in minutes)">
-        <button class="btn btn-info btn-block" id="submit-button" type="submit">Submit</button>
+        <input type="text" style="font-family: 'Quicksand', sans-serif;" id="train-name" class="form-control mb-4" placeholder="Train Name (ex. Choo Choo Express)">
+        <input type="text" style="font-family: 'Quicksand', sans-serif;" id="destination" class="form-control mb-4" placeholder="Destination (ex. The Moon)">
+        <input type="number" style="font-family: 'Quicksand', sans-serif;" id="initial-departure" class="form-control mb-4" placeholder="First Train Departure (military time)">
+        <input type="number" style="font-family: 'Quicksand', sans-serif;" id="frequency" class="form-control mb-4" placeholder="Frequency (in minutes)">
+        <button class="btn btn-info btn-block" style="font-family: 'Quicksand', sans-serif;" id="submit-button" type="submit">Submit</button>
     </form>
     <div class="row">
         <div class="col w-100">
                 <div class="col-mb-4">
                         <div class="card card-default">
                             <div class="card-header text-center">
-                            <strong>Recent Employee Information</strong>
+                            <strong>Train Schedules</strong>
                             </div>
                             <div class="card-body" id="recent-employee">
                             <table class="table table-sm table-hover" id="employee-table">

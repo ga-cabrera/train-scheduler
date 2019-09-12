@@ -20,10 +20,10 @@ $("#submit-button").on("click", function() {
     var destination = $("#destination").val().trim();
     var firstDeparture = $("#first-departure").val().trim();
     var frequency = $("#frequency").val().trim();
-    console.log(trainName);
-    console.log(destination);
-    console.log(firstDeparture);
-    console.log(frequency);
+    console.log("Train Name:",trainName);
+    console.log("Destination:", destination);
+    console.log("First Departure:", firstDeparture, "(Military Time)");
+    console.log("Frequency:", frequency, "minutes");
     // variable that creates firebase object using variables above
     var newTrain = {
         trainName: trainName,
@@ -31,8 +31,8 @@ $("#submit-button").on("click", function() {
         firstDeparture: firstDeparture,
         frequency: frequency
     }
-    // pushes newTrain to my console (inpspect)
-    console.log(newTrain);
+    // pushes newTrain to my console (inspect)
+    console.log("firebase push test", newTrain);
     // once data is pushed to firebase, info card inputs will clear out
     database.ref().push(newTrain);
     $("#train-name").val("");
@@ -45,7 +45,6 @@ database.ref().on("child_added", function(childSnapshot){
     var trainName = (childSnapshot.val().trainName);
     var destination = (childSnapshot.val().destination);
     var firstDeparture = (childSnapshot.val().firstDeparture);
-    console.log(firstDeparture);
     var frequency = (childSnapshot.val().frequency);
     // variable that uses moment.js to figure out when the next train arrival will take place 
     var timeSplit = firstDeparture.split(":");

@@ -1,10 +1,10 @@
 // Your web app's Firebase configuration
-  var firebaseConfig = {
+var firebaseConfig = {
     apiKey: "AIzaSyBSnXBBXl2PYk6i4mTfBK0U9ZnOBQDejgk",
     authDomain: "train-scheduler-88b95.firebaseapp.com",
     databaseURL: "https://train-scheduler-88b95.firebaseio.com",
     projectId: "train-scheduler-88b95",
-    storageBucket: "",
+    storageBucket: "train-scheduler-88b95.appspot.com",
     messagingSenderId: "719076505863",
     appId: "1:719076505863:web:6684f216300e9189f26da2"
   };
@@ -12,7 +12,7 @@
   firebase.initializeApp(firebaseConfig);
 // Submit Button (adding to firebase)
 var database = firebase.database();
-$("#submit").on("click", function() {
+$("#submit-button").on("click", function() {
     // stops button from refreshing
     event.preventDefault();
     // variables that grabs from info card inputs, while also removing any unnecessary spaces
@@ -27,7 +27,9 @@ $("#submit").on("click", function() {
         firstDeparture: firstDeparture,
         frequency: frequency
     }
-    // once data is pushed to firebase, info card inputs will go blank so that it is ready to add any more train schedules
+    // pushes newTrain to my console (inpspect)
+    console.log(newTrain);
+    // once data is pushed to firebase, info card inputs will clear out
     database.ref().push(newTrain);
     $("#train-name").val("");
     $("#destination").val("");

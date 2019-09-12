@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Google Fonts Link -->
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Quicksand&display=swap" rel="stylesheet">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-database.js"></script>
 </head>
 <body>
     <div class="container">
@@ -25,7 +28,7 @@
     <form class="text-center border border-light p-5" >
         <input type="text" style="font-family: 'Quicksand', sans-serif;" id="train-name" class="form-control mb-4" placeholder="Train Name (ex. Choo Choo Express)">
         <input type="text" style="font-family: 'Quicksand', sans-serif;" id="destination" class="form-control mb-4" placeholder="Destination (ex. The Moon)">
-        <input type="number" style="font-family: 'Quicksand', sans-serif;" id="initial-departure" class="form-control mb-4" placeholder="First Train Departure (military time)">
+        <input type="number" style="font-family: 'Quicksand', sans-serif;" id="first-departure" class="form-control mb-4" placeholder="First Train Departure (military time)">
         <input type="number" style="font-family: 'Quicksand', sans-serif;" id="frequency" class="form-control mb-4" placeholder="Frequency (in minutes)">
         <button class="btn btn-info btn-block" style="font-family: 'Quicksand', sans-serif;" id="submit-button" type="submit">Submit</button>
     </form>
@@ -58,9 +61,6 @@
     </div>
     </div>
 </body>
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-database.js"></script>
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#config-web-app -->
 <!-- Javascript, jQuery, Popper for some reason -->

@@ -44,16 +44,27 @@ $("#submit-button").on("click", function() {
 database.ref().on("child_added", function(childSnapshot){
     var trainName = (childSnapshot.val().trainName);
     var destination = (childSnapshot.val().destination);
-    var firstDeparture = (childSnapshot.val().destination);
+    var firstDeparture = (childSnapshot.val().firstDeparture);
     console.log(firstDeparture);
     var frequency = (childSnapshot.val().frequency);
     // variable that uses moment.js to figure out when the next train arrival will take place 
-    var nextArrival   
-    // ADD HERE
-    var minutesAway
-    // ADD HERE
-    // ADD HERE
-    // create variable that writes/adds to index.html
+    var timeSplit = firstDeparture.split(":");
+    var trainTime = moment().hours(timeSplit[0]).minutes(timeSplit[1]);
+    var maxMoment = moment().max(moment(), trainTime);
+    var nextArrival;  
+    var minutesAway;
+    if (maxMoment === trainTime) {
+        nextArrival = trainTime.format("hh:mm A");
+        minutesAway = trainTime.diff(moment(), "minutes");
+    } else {
+        // calculates minutes away from next arrival
+        var timeDifference = moment().diff(trainTime, "minutes");
+        var tRemainder = timeDifference % frequency;
+        minutesAway = frequency - tRemainder;
+        nextArrival = moment().add(minutesAway, "m").format("hh:mm A");
+    }
+    console.log("Next Arrival:", nextArrival);
+    console.log("Minutes Away:", minutesAway);
     var newRow = $("<tr>").append(
         $("<td class='text-center'>").text(trainName),
         $("<td class='text-center'>").text(destination),

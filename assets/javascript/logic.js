@@ -15,11 +15,15 @@ var database = firebase.database();
 $("#submit-button").on("click", function() {
     // stops button from refreshing
     event.preventDefault();
-    // variables that grabs from info card inputs, while also removing any unnecessary spaces
+    // variables that grab from info card inputs, while also removing any unnecessary spaces
     var trainName = $("#train-name").val().trim();
     var destination = $("#destination").val().trim();
     var firstDeparture = $("#first-departure").val().trim();
     var frequency = $("#frequency").val().trim();
+    console.log(trainName);
+    console.log(destination);
+    console.log(firstDeparture);
+    console.log(frequency);
     // variable that creates firebase object using variables above
     var newTrain = {
         trainName: trainName,
@@ -38,10 +42,26 @@ $("#submit-button").on("click", function() {
 })
 // every time data is pushed to firebase, a new object will be created with pushed data
 database.ref().on("child_added", function(childSnapshot){
-    var trainName = (childSnapshot.val().name);
+    var trainName = (childSnapshot.val().trainName);
     var destination = (childSnapshot.val().destination);
     var firstDeparture = (childSnapshot.val().destination);
+    console.log(firstDeparture);
     var frequency = (childSnapshot.val().frequency);
-    // variable that uses moment.js to figure out when the next train arrival will take place
-    
+    // variable that uses moment.js to figure out when the next train arrival will take place 
+    var nextArrival   
+    // ADD HERE
+    var minutesAway
+    // ADD HERE
+    // ADD HERE
+    // create variable that writes/adds to index.html
+    var newRow = $("<tr>").append(
+        $("<td class='text-center'>").text(trainName),
+        $("<td class='text-center'>").text(destination),
+        $("<td class='text-center'>").text(frequency),
+        $("<td class='text-center'>").text(nextArrival),
+        $("<td class='text-center'>").text(minutesAway)
+    );
+    // adds train info to table
+    $("#train-table > tbody").append(newRow);
+
 })
